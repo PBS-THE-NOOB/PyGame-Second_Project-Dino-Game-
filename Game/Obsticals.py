@@ -1,5 +1,5 @@
 import pygame 
-from Settings.constants import DEAD_TREE_HEIGHT,DEAD_TREE_WIDTH,GROUND_Y_COORDINATE
+from Settings.constants import DEAD_TREE_HEIGHT,DEAD_TREE_WIDTH,GROUND_Y_COORDINATE,OBSTICALS_SPEED
 
 class Obsticals(pygame.sprite.Sprite):
 
@@ -27,8 +27,8 @@ class Obsticals(pygame.sprite.Sprite):
 
     def move_obsticals(self):
         if self.type == 'bird' : 
-            self.rect.x -= 5
-        else : self.rect.x -= 5
+            self.rect.x -= OBSTICALS_SPEED
+        else : self.rect.x -= OBSTICALS_SPEED
         if self.rect.right <= -50 : self.kill()
 
     def update(self):
