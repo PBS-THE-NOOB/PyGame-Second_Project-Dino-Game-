@@ -36,6 +36,13 @@ class Player(pygame.sprite.Sprite):
             self.gravity = 0
             self.grounded = True
 
+    def reset(self):
+        self.player_index = 0
+        self.image = self.image_frames[int(self.player_index)]
+        self.rect = self.image.get_rect(midbottom = (100,PLAYER_GROUND_Y))
+        self.grounded = True
+        self.gravity = 0
+        
     def update(self):
         self.apply_gravity()
         self.animate_player()
